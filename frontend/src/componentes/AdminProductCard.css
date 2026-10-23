@@ -1,0 +1,228 @@
+/* =====================================
+   GTSOU ADMIN PRODUCT CARD
+   Premium Blue & White Design
+===================================== */
+
+.admin-product-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 17px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2eaf8;
+  border-radius: 17px;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.045);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-product-card:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.12);
+}
+
+/* Product image area */
+
+.admin-product-image-box {
+  position: relative;
+  width: 100%;
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f8faff, #edf4ff);
+  border: 1px solid #eef2ff;
+  border-radius: 12px;
+}
+
+.admin-product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.admin-product-card:hover .admin-product-image {
+  transform: scale(1.06);
+}
+
+/* Small product badge */
+
+.admin-product-badge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  padding: 5px 9px;
+  border: 1px solid #dbeafe;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1d4ed8;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* Product details */
+
+.admin-product-details {
+  padding-top: 13px;
+}
+
+.admin-product-name {
+  display: -webkit-box;
+  min-height: 42px;
+  margin: 0 0 12px;
+  overflow: hidden;
+  color: #172554;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+/* Price and edit row */
+
+.admin-product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 11px;
+  border-top: 1px solid #eef2f7;
+}
+
+.admin-product-price-box {
+  min-width: 0;
+}
+
+.admin-product-price-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.admin-product-price {
+  margin: 0;
+  color: #1d4ed8;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Edit button */
+
+.admin-product-edit-btn {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bfdbfe;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 21px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-product-edit-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.23);
+  transform: translateY(-2px);
+}
+
+.admin-product-edit-btn:active {
+  transform: scale(0.95);
+}
+
+.admin-product-edit-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .admin-product-card {
+    padding: 11px;
+    border-radius: 14px;
+  }
+
+  .admin-product-image-box {
+    height: 165px;
+    padding: 9px;
+  }
+
+  .admin-product-name {
+    font-size: 13px;
+  }
+
+  .admin-product-price {
+    font-size: 14px;
+  }
+
+  .admin-product-edit-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 19px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 420px) {
+  .admin-product-image-box {
+    height: 140px;
+  }
+
+  .admin-product-details {
+    padding-top: 10px;
+  }
+
+  .admin-product-name {
+    min-height: 39px;
+    font-size: 12px;
+  }
+
+  .admin-product-price {
+    font-size: 13px;
+  }
+
+  .admin-product-price-label {
+    font-size: 9px;
+  }
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-product-card,
+  .admin-product-image,
+  .admin-product-edit-btn {
+    transition: none;
+  }
+}

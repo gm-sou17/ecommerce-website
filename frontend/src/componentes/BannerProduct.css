@@ -1,0 +1,264 @@
+/* ======================================
+   GTSOU PREMIUM BANNER CAROUSEL
+   Blue & White Theme
+====================================== */
+
+.banner-product-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Main slider */
+
+.banner-product-slider {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 29vw, 390px);
+  overflow: hidden;
+  isolation: isolate;
+  background: #eaf2ff;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.09);
+}
+
+/* Image tracks */
+
+.banner-product-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner-product-desktop {
+  display: flex;
+}
+
+.banner-product-mobile {
+  display: none;
+}
+
+/* Individual slides */
+
+.banner-product-slide {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Banner image */
+
+.banner-product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Navigation layer */
+
+.banner-product-navigation {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+/* Arrow buttons */
+
+.banner-product-arrow {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  border: 1px solid rgba(219, 234, 254, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1d4ed8;
+  font-size: 23px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.14);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.banner-product-arrow:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+  transform: scale(1.08);
+}
+
+.banner-product-arrow:active {
+  transform: scale(0.94);
+}
+
+.banner-product-arrow:focus-visible,
+.banner-product-dot:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+/* Slide indicators */
+
+.banner-product-dots {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 30px;
+  background: rgba(15, 23, 42, 0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateX(-50%);
+}
+
+/* Individual dots */
+
+.banner-product-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.banner-product-dot.active {
+  width: 24px;
+  background: #ffffff;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .banner-product-section {
+    padding: 0 10px;
+  }
+
+  .banner-product-slider {
+    height: clamp(210px, 36vw, 290px);
+    border-radius: 15px;
+  }
+
+  .banner-product-navigation {
+    padding: 0 10px;
+  }
+
+  .banner-product-arrow {
+    width: 37px;
+    height: 37px;
+    font-size: 20px;
+  }
+
+  .banner-product-dots {
+    bottom: 10px;
+    gap: 7px;
+    padding: 7px 10px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .banner-product-section {
+    padding: 0 7px;
+  }
+
+  .banner-product-slider {
+    height: clamp(155px, 53vw, 245px);
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(30, 64, 175, 0.08);
+  }
+
+  .banner-product-desktop {
+    display: none;
+  }
+
+  .banner-product-mobile {
+    display: flex;
+  }
+
+  .banner-product-navigation {
+    padding: 0 8px;
+  }
+
+  .banner-product-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+  }
+
+  .banner-product-dots {
+    bottom: 8px;
+    gap: 6px;
+    padding: 6px 9px;
+  }
+
+  .banner-product-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .banner-product-dot.active {
+    width: 18px;
+  }
+}
+
+/* Very small screens */
+
+@media (max-width: 380px) {
+  .banner-product-slider {
+    height: 155px;
+  }
+
+  .banner-product-arrow {
+    width: 29px;
+    height: 29px;
+    font-size: 15px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-product-slide,
+  .banner-product-arrow,
+  .banner-product-dot {
+    transition: none;
+  }
+}

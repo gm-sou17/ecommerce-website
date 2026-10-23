@@ -1,0 +1,417 @@
+
+/* =====================================
+   UPLOAD PRODUCT MODAL - GTSOU
+===================================== */
+
+/* Background overlay + blur */
+.upload-product-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  padding: 24px;
+  background: rgba(60, 47, 47, 0.58);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  animation: uploadOverlayIn 0.25s ease;
+}
+
+/* Main modal */
+.upload-product-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 960px;
+  height: min(90vh, 860px);
+  height: min(90dvh, 860px);
+  min-width: 0;
+  max-height: 100%;
+  overflow: hidden;
+  border: 1px solid #e3e9f3;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 25px 90px rgba(0, 0, 0, 0.3);
+  animation: uploadModalIn 0.3s ease;
+}
+
+/* Modal header */
+.upload-product-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-shrink: 0;
+  padding: 22px 28px;
+  border-bottom: 1px solid #e8edf5;
+  background: linear-gradient(120deg, #f5f8ff, #ffffff);
+}
+
+.upload-product-header-content {
+  min-width: 0;
+}
+
+.upload-product-header-content h2 {
+  margin: 0;
+  color: #132b55;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.upload-product-header-content p {
+  margin: 6px 0 0;
+  color: #74829a;
+  font-size: 13px;
+}
+
+.upload-product-close {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e3e9f3;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #53627a;
+  font-size: 23px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-product-close:hover {
+  transform: rotate(90deg);
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+/* Scrollable form */
+.upload-product-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  gap: 9px 20px;
+  padding: 24px 28px 28px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.upload-product-form::-webkit-scrollbar {
+  width: 7px;
+}
+
+.upload-product-form::-webkit-scrollbar-track {
+  background: #f5f7fb;
+}
+
+.upload-product-form::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #c5d3e9;
+}
+
+.upload-product-form::-webkit-scrollbar-thumb:hover {
+  background: #8da8d0;
+}
+
+/* Labels */
+.upload-product-form > label {
+  align-self: end;
+  margin-top: 8px;
+  color: #293c5c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Inputs, select and textarea */
+.upload-product-form > input,
+.upload-product-form > select,
+.upload-product-form > textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #dce4f0;
+  border-radius: 10px;
+  outline: none;
+  background: #f8faff;
+  color: #172b4d;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.upload-product-form > input,
+.upload-product-form > select {
+  min-height: 45px;
+}
+
+.upload-product-form > textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.upload-product-form > input:focus,
+.upload-product-form > select:focus,
+.upload-product-form > textarea:focus {
+  border-color: #3974ed;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(57, 116, 237, 0.11);
+}
+
+.upload-product-form > input::placeholder,
+.upload-product-form > textarea::placeholder {
+  color: #9aa7bb;
+}
+
+/* Full width fields */
+.upload-product-form .upload-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Upload area */
+.upload-product-dropzone {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 170px;
+  padding: 20px;
+  border: 2px dashed #b9cdf5;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f5f8ff, #edf4ff);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.upload-product-dropzone:hover {
+  border-color: #3974ed;
+  background: #eaf1ff;
+}
+
+.upload-product-dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: #667b9e;
+  text-align: center;
+}
+
+.upload-product-cloud-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  background: #dce8ff;
+  color: #2159c5;
+  font-size: 30px;
+}
+
+.upload-product-dropzone-content strong {
+  color: #193a78;
+  font-size: 14px;
+}
+
+.upload-product-dropzone-content span {
+  font-size: 12px;
+}
+
+/* Image preview list */
+.upload-product-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.upload-product-preview-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid #dce5f3;
+  border-radius: 12px;
+  background: #f4f7fc;
+}
+
+.upload-product-preview-image {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+.upload-product-delete-image {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border: none;
+  border-radius: 8px;
+  background: #dc2626;
+  color: white;
+  font-size: 17px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.upload-product-preview-item:hover .upload-product-delete-image,
+.upload-product-delete-image:focus-visible {
+  opacity: 1;
+}
+
+/* Image validation note */
+.upload-product-image-note {
+  margin: 9px 0 0;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+/* Submit button */
+.upload-product-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 12px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(110deg, #1746a2, #3478f6);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
+  transition: all 0.25s ease;
+}
+
+.upload-product-submit:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(110deg, #10377f, #205cce);
+  box-shadow: 0 10px 23px rgba(37, 99, 235, 0.28);
+}
+
+.upload-product-submit:active {
+  transform: scale(0.99);
+}
+
+/* Animations */
+@keyframes uploadOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes uploadModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Tablet */
+@media (max-width: 650px) {
+  .upload-product-overlay {
+    padding: 0;
+  }
+
+  .upload-product-modal {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .upload-product-header {
+    padding: 18px;
+  }
+
+  .upload-product-header-content h2 {
+    font-size: 21px;
+  }
+
+  .upload-product-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .upload-product-form .upload-full-width,
+  .upload-product-submit {
+    grid-column: 1;
+  }
+
+  .upload-product-form > label {
+    margin-top: 10px;
+  }
+
+  .upload-product-dropzone {
+    min-height: 135px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 380px) {
+  .upload-product-header {
+    padding: 14px;
+  }
+
+  .upload-product-form {
+    padding: 14px;
+  }
+
+  .upload-product-header-content h2 {
+    font-size: 19px;
+  }
+
+  .upload-product-close {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .upload-product-overlay,
+  .upload-product-modal {
+    animation: none;
+  }
+
+  .upload-product-close,
+  .upload-product-submit {
+    transition: none;
+  }
+}

@@ -1,0 +1,46 @@
+/* Logo.css */
+
+.premium-logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  overflow: visible;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--logo-font-size);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25s ease;
+}
+
+.premium-logo:hover {
+  transform: scale(1.04);
+}
+
+.logo-blue {
+  color: #2563eb;
+  text-shadow: 0 2px 5px rgba(37, 99, 235, 0.12);
+}
+
+.logo-navy {
+  color: #172554;
+  text-shadow: 0 2px 5px rgba(23, 37, 84, 0.08);
+}
+
+@media (max-width: 480px) {
+  .premium-logo {
+    letter-spacing: -1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-logo {
+    transition: none;
+  }
+}

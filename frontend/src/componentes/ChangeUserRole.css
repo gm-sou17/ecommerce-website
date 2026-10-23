@@ -1,0 +1,211 @@
+/* ChangeUserRole.css */
+
+.change-role-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: roleOverlayFade 0.2s ease;
+}
+
+.change-role-modal {
+  width: 100%;
+  max-width: 430px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e5eaf3;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.2);
+  animation: roleModalEnter 0.25s ease;
+}
+
+.change-role-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  color: #64748b;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.change-role-close svg {
+  font-size: 22px;
+}
+
+.change-role-close:hover {
+  color: #ffffff;
+  background: #ef4444;
+  transform: rotate(90deg);
+}
+
+.change-role-title {
+  margin: 4px 0 22px;
+  color: #0f172a;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.change-role-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 10px;
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+.change-role-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 17px;
+  background: #f8faff;
+  border: 1px solid #e8eef8;
+  border-radius: 13px;
+}
+
+.change-role-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.change-role-info p span {
+  display: block;
+  margin-bottom: 3px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.change-role-info p strong {
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.change-role-select-row {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 22px 0;
+}
+
+.change-role-label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.change-role-select {
+  width: 100%;
+  padding: 12px 14px;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.change-role-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.change-role-submit {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.change-role-submit:hover {
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.change-role-submit:active {
+  transform: translateY(0);
+}
+
+.change-role-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes roleOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes roleModalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .change-role-overlay {
+    padding: 15px;
+  }
+
+  .change-role-modal {
+    padding: 21px;
+    border-radius: 16px;
+  }
+
+  .change-role-title {
+    font-size: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .change-role-overlay,
+  .change-role-modal {
+    animation: none;
+  }
+
+  .change-role-close,
+  .change-role-submit {
+    transition: none;
+  }
+}
